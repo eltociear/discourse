@@ -13,6 +13,8 @@ class DraftController < ApplicationController
   end
 
   def update
+    #raise Discourse::NotFound.new
+    Rails.logger.warn "updating the draft...."
     raise Discourse::NotFound.new if params[:draft_key].blank?
 
     sequence =
